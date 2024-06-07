@@ -1,0 +1,7 @@
+# Source YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/sources
+  
+type: source
+
+connector: "duckdb"
+sql: "select * from read_parquet('https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet') order by tpep_pickup_datetime desc limit 100000"

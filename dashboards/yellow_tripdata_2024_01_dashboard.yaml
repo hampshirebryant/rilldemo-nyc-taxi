@@ -1,0 +1,97 @@
+# Dashboard YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/dashboards
+# This file was generated using AI.
+
+type: metrics_view
+title: Suggested metrics for yellow_tripdata_2024_01 table
+table: yellow_tripdata_2024_01
+timeseries: tpep_pickup_datetime
+dimensions:
+  - label: Store And Fwd Flag
+    column: store_and_fwd_flag
+    description: ""
+measures:
+  - name: average_passenger_count
+    label: Average Passenger Count
+    expression: AVG(passenger_count)
+    description: Average number of passengers per trip
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: total_trip_distance
+    label: Total Trip Distance
+    expression: SUM(trip_distance)
+    description: Total distance covered by all trips
+    format_preset: humanize
+    valid_percent_of_total: true
+  - name: max_fare_amount
+    label: Maximum Fare Amount
+    expression: MAX(fare_amount)
+    description: Highest fare amount charged for a trip
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: average_tip_amount
+    label: Average Tip Amount
+    expression: AVG(tip_amount)
+    description: Average tip amount given by passengers
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: total_tolls_amount
+    label: Total Tolls Amount
+    expression: SUM(tolls_amount)
+    description: Total tolls amount paid by all trips
+    format_preset: humanize
+    valid_percent_of_total: true
+  - name: min_total_amount
+    label: Minimum Total Amount
+    expression: MIN(total_amount)
+    description: Lowest total amount paid for a trip
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: average_congestion_surcharge
+    label: Average Congestion Surcharge
+    expression: AVG(congestion_surcharge)
+    description: Average congestion surcharge added to trips
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: total_airport_fees
+    label: Total Airport Fees
+    expression: SUM(Airport_fee)
+    description: Total airport fees collected from all trips
+    format_preset: humanize
+    valid_percent_of_total: true
+  - name: total_trips
+    label: Total Trips
+    expression: COUNT(*)
+    description: Total number of trips recorded
+    format_preset: humanize
+    valid_percent_of_total: true
+available_time_zones:
+  - America/Los_Angeles
+  - America/Chicago
+  - America/New_York
+  - Europe/London
+  - Europe/Paris
+  - Asia/Jerusalem
+  - Europe/Moscow
+  - Asia/Kolkata
+  - Asia/Shanghai
+  - Asia/Tokyo
+  - Australia/Sydney
+available_time_ranges:
+  - PT6H
+  - PT24H
+  - P7D
+  - P14D
+  - P4W
+  - P3M
+  - P12M
+  - rill-TD
+  - rill-WTD
+  - rill-MTD
+  - rill-QTD
+  - rill-YTD
+  - rill-PDC
+  - rill-PWC
+  - rill-PMC
+  - rill-PQC
+  - rill-PYC
